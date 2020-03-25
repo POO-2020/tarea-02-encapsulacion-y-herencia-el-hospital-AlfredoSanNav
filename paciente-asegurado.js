@@ -1,5 +1,6 @@
 import Paciente from "./paciente.js"
 import Fecha from "./fecha.js"
+
 export default class PacienteAsegurado extends Paciente{
     /**
      * 
@@ -7,7 +8,7 @@ export default class PacienteAsegurado extends Paciente{
      * @param {Fecha} fechaFinVigencia 
      * @param {string} compañia 
      */
-    constructor(numeroPoliza, fechaFinVigencia, compañia){
+    constructor({nombre, fechaNacimiento, telefono, numeroPoliza, fechaFinVigencia, compañia}){
         super(nombre, fechaNacimiento, telefono)
         this._numeroPoliza = numeroPoliza
         this._fechaFinVigencia = fechaFinVigencia
@@ -17,6 +18,6 @@ export default class PacienteAsegurado extends Paciente{
         this._telefono = telefono
     }
     getPerfil(){
-        return(`${this._nombre.getNombreCompleto()}, ${this._fechaNacimiento.getFecha()}, ${this._telefono}, ${this._numeroPoliza}, ${this._fechaFinVigencia}, ${this.compañia}`)
+        return(`${this._nombre.getNombreCompleto()}, ${this._fechaNacimiento.getFecha()}, ${this._telefono}, ${this._numeroPoliza}, ${this._fechaFinVigencia.getFecha()}, ${this._compañia}`)
     }
 }

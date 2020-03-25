@@ -5,6 +5,16 @@ import Doctor from './doctor.js';
 import Paciente from './paciente.js';
 import Cita from './cita.js';
 import Hospital from './hospital.js';
+import PacienteAsegurado from './paciente-asegurado.js';
+
+var pacienteAseg = {
+  nombre: new Nombre("Yolanda", "Solorio", "Reyes"),
+  fechaNacimiento: new Fecha(29, 2, 2019),
+  telefono: 3121423889,
+  numeroPoliza: 2152521,
+  fechaFinVigencia: new Fecha(25,12,2016),
+  compañia: "Repara todo"
+};
 
 class Main {
   constructor() {
@@ -23,13 +33,13 @@ class Main {
     this.cita = new Cita(this.fecha, this.tiempo1, this.doctor, this.paciente);
 
     this.hospital = new Hospital('Puerta de Hierro', 'Av. Constitución 100');
+
+    this._pacienteAsegurado1 = new PacienteAsegurado(pacienteAseg)
+
   }
 
   probarTiempo() {
     console.log(this.tiempo1.getFormato12());
-    console.log(this.tiempo2.getFormato12());
-    console.log(this.tiempo1.getFormato24());
-    console.log(this.tiempo2.getFormato24());
   }
 
   probarFecha() {
@@ -65,6 +75,10 @@ class Main {
     this.hospital.listarDoctores();
     this.hospital.listarCitas();
   }
+
+  probarPacienteAsegurado(){
+    console.log(this._pacienteAsegurado1.getPerfil())
+  }
 }
 let app = new Main();
 
@@ -75,3 +89,4 @@ app.probarPaciente();
 app.probarDoctor();
 app.probarCita();
 app.probarHospital();
+app.probarPacienteAsegurado()
