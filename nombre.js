@@ -22,4 +22,5 @@ export default class Nombre {
   getIniciales(){
     return `${this._nombre[0]}${this._apellidoPaterno[0]}${this._apellidoMaterno[0]}`;
   }
+  
 }

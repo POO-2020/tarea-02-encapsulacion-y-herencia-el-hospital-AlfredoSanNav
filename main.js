@@ -27,11 +27,11 @@ class Main {
     this.nombre2 = new Nombre('María', 'Ramos', 'Ramírez');
 
     var datospaciente = {
-      nombre: this.nombre,
+      nombre: new Nombre("Alejando", "Velazquez", "Ortega"),
       fechaNacimiento: this.fecha,
       telefono: 3121256585
     }
-    this.paciente = new Paciente(datospaciente);
+    this.paciente= new Paciente(datospaciente);
 
 
     var datosDoctor = {
@@ -46,7 +46,7 @@ class Main {
       fecha: this.fecha, 
       hora: this.tiempo1, 
       doctor: this.doctor, 
-      paciente: this.Paciente
+      paciente: this.paciente.getApellidoParteno()
     }
     this.cita = new Cita(datosCita);
 

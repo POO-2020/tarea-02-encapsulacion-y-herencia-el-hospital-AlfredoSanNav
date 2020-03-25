@@ -14,6 +14,9 @@ export default class Paciente {
   }
 
   getPerfil() {
-    return `${this._nombre}, ${this._fechaNacimiento.getFecha()}, ${this._telefono}`;
+    return `${this._nombre.getNombreCompleto()}, ${this._fechaNacimiento.getFecha()}, ${this._telefono}`;
+  }
+  getApellidoParteno(){
+    return(this._nombre._apellidoPaterno)
   }
 }

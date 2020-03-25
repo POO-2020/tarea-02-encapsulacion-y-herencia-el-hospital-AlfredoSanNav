@@ -19,7 +19,7 @@ export default class cita {
 
   getCita() {
     return `${this._fecha.getFecha()}, ${this._hora.getFormato24()}, Dr. ${
-      this._doctor._nombre.apellidoPaterno
-    }, ${this._paciente._nombre.getNombreCompleto()}`;
+      this._doctor._nombre._apellidoPaterno
+    }, ${this._paciente}`;
   }
 }
