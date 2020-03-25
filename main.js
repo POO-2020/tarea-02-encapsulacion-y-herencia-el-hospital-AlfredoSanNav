@@ -26,13 +26,35 @@ class Main {
     this.nombre = new Nombre('Juan', 'Pérez', 'Díaz');
     this.nombre2 = new Nombre('María', 'Ramos', 'Ramírez');
 
-    this.paciente = new Paciente(this.nombre, this.fecha, 3123454367);
+    var datospaciente = {
+      nombre: this.nombre,
+      fechaNacimiento: this.fecha,
+      telefono: 3121256585
+    }
+    this.paciente = new Paciente(datospaciente);
 
-    this.doctor = new Doctor(this.nombre2, 'Cardiólogo', 3125677896, 445566);
 
-    this.cita = new Cita(this.fecha, this.tiempo1, this.doctor, this.paciente);
+    var datosDoctor = {
+      nombre: this.nombre2,
+      especialidad: "Cardiologo", 
+      telefono: 312158895,
+      cedula: 445566
+    }
+    this.doctor = new Doctor(datosDoctor);
 
-    this.hospital = new Hospital('Puerta de Hierro', 'Av. Constitución 100');
+    var datosCita ={
+      fecha: this.fecha, 
+      hora: this.tiempo1, 
+      doctor: this.doctor, 
+      paciente: this.Paciente
+    }
+    this.cita = new Cita(datosCita);
+
+    var datosHospital = {
+      nombre: "Puerta de hierro" ,
+      direccion: "Av. Constitución 110"
+    }
+    this.hospital = new Hospital(datosHospital);
 
     this._pacienteAsegurado1 = new PacienteAsegurado(pacienteAseg)
 
